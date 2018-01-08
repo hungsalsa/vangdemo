@@ -1,0 +1,64 @@
+<operation>
+   <search postion="replace"><![CDATA[public function index() {]]></search>
+   <add><![CDATA[private $urlFriendly = array(
+   'common/home'          => '',
+   'checkout/checkout'    => 'thanh-toan',
+   'checkout/cart'        => 'thanh-toan/gio-hang',
+   'checkout/voucher'     => 'thanh-toan/phieu-qua-tang',
+   
+   'account/account'    => 'tai-khoan',
+   'account/register'     => 'tai-khoan/dang-ky',
+   'account/wishlist'     => 'tai-khoan/yeu-thich',
+   'account/logout'       => 'tai-khoan/dang-xuat',
+   'account/login'        => 'tai-khoan/dang-nhap',
+   'account/recurring'    => 'tai-khoan/thanh-toan-dinh-ky',
+   'account/voucher'    => 'tai-khoan/phieu-qua-tang',
+   'account/forgotten'       => 'tai-khoan/quen-mat-khau',
+   'account/download'        => 'tai-khoan/tai-ve',
+   'account/return'        => 'tai-khoan/doi-tra-hang',
+   'account/return/insert'   => 'tai-khoan/doi-tra-hang/yeu-cau',
+   'account/transaction'   => 'tai-khoan/giao-dich',
+   'account/password'    => 'tai-khoan/mat-khau',
+   'account/edit'     => 'tai-khoan/chinh-sua',
+   'account/address'    => 'tai-khoan/dia-chi',
+   'account/reward'    => 'tai-khoan/diem-thuong',
+   'account/newsletter'   => 'tai-khoan/nhan-tin-tuc',
+   'account/order'     => 'tai-khoan/don-hang',
+   
+   'affiliate/account'    => 'tiep-thi/tai-khoan',
+   'affiliate/login'    => 'tiep-thi/dang-nhap',
+   'affiliate/register'   => 'tiep-thi/dang-ky',
+   'affiliate/transaction'   => 'tiep-thi/giao-dich', 
+   'affiliate/tracking'   => 'tiep-thi/theo-doi',
+   'affiliate/payment'    => 'tiep-thi/cong-thanh-toan',
+   'affiliate/forgotten'   => 'tiep-thi/quen-mat-khau',
+   
+   'information/contact'   => 'trang/lien-he',
+   'information/sitemap'     => 'trang/sitemap',
+   'product/special'      => 'khuyen-mai',
+   'product/manufacturer'   => 'thuong-hieu',
+   'module/currency'    => 'tien-te',
+   'product/allproduct'   => 'tat-ca-san-pham'
+  );
+                
+  public function getKeyFriendly($_route) {
+   if( count($this->urlFriendly) > 0 ){
+    $key = array_search($_route, $this->urlFriendly);
+     if($key && in_array($_route, $this->urlFriendly)){
+      return $key;
+     }
+    }
+   return false;
+  }
+
+  public function getValueFriendly($route) {
+   if( count($this->urlFriendly) > 0) {
+    if(in_array($route, array_keys($this->urlFriendly))){
+     return '/'.$this->urlFriendly[$route];
+     }
+    }
+   return false;
+  }
+  
+  public function index() {]]></add>
+  </operation>
