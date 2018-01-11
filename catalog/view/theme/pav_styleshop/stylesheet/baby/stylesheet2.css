@@ -4293,7 +4293,7 @@ ul.contact-us li a {
 
 #pav-verticalmenu .navbar-nav > li > a:before {
     color: #AAB2BD;
-    content: "\f00b";
+    content: "\f013";
     display: inline-block;
     font-family: "FontAwesome";
     font-weight: normal;
@@ -6058,8 +6058,8 @@ body,
     float: left;
 }
 .support-skyper{
-    float: left;
-    width: 100%;
+    float: right;
+    margin: 20px 0px 0px 20px;
 }
 .support-skyper p{
     clear: both;
@@ -6069,7 +6069,7 @@ body,
     width: 55px;
     height: auto;
     float: left;
-    /*margin: 0px 10px 10px 0px; */
+    margin: 0px 10px 10px 0px; 
 } 
 .support-skyper span{
     text-transform: uppercase;

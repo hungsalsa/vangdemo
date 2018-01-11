@@ -42,7 +42,6 @@ if( isset($themeConfig['customize_theme'])
 <!DOCTYPE html>
 <html dir="<?php echo $helper->getDirection(); ?>" class="<?php echo $helper->getDirection(); ?>" lang="<?php echo $lang; ?>">
 <head>
-<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
 <!-- Mobile viewport optimized: h5bp.com/viewport -->
 <meta name="viewport" content="width=device-width">
 <meta charset="UTF-8" />
@@ -239,37 +238,37 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 			</div>
 
 			<div id="header-main">
-				<div class="row">
-					<div class="container">
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 logo">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 logo" id="logo">
 							<?php if( $logoType=='logo-theme'){ ?>
-				<div id="logo-theme"><a href="<?php echo $home; ?>"><span><?php echo $name; ?></span></a></div>
+							<div id="logo-theme"><a href="<?php echo $home; ?>"><span><?php echo $name; ?></span></a></div>
 							<?php } elseif ($logo) { ?>
 							<div id="logo"><a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a></div>
 							<?php } ?>					
 						</div>
 
-						<div class="hidden-xs hidden-sm inner pull-left">
-							<div class="support">			
+						<div class="col-lg-9 col-md-9 col-sm-6 col-xs-12 hidden-xs hidden-sm">
+							<div class="support" style="height: 128px;padding-top: 2%;">			
 								<?php if( isset($themeConfig['support_data'][$LANGUAGE_ID]) ) { ?>
 								<?php echo html_entity_decode( $themeConfig['support_data'][$LANGUAGE_ID], ENT_QUOTES, 'UTF-8' ); ?>
 								<?php } ?>
 							</div>	
-					</div>					
+						</div>					
 
-					<div class="pull-right shopping-cart hidden-xs hidden-sm">
-						<div class="cart-top">
-							<?php echo $cart; ?>
+						<div class="pull-right shopping-cart hidden-xs hidden-sm">
+							<div class="cart-top">
+								<?php echo $cart; ?>
+							</div>
 						</div>
-					</div>
-					<div id="search">					
-						<div class="input-group">
-							<input type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" class="input-search form-control" />
-							<span class="input-group-btn">							
-								<button class="button-search" type="button"><em class="fa fa-search"></em></button>
-							</span>
-						</div>						
-					</div>		
+						<div id="search">					
+							<div class="input-group">
+								<input type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" class="input-search form-control" />
+								<span class="input-group-btn">							
+									<button class="button-search" type="button"><em class="fa fa-search"></em></button>
+								</span>
+							</div>						
+						</div>		
 					</div>
 				</div>
 			</div>	
