@@ -50,23 +50,30 @@ class ControllerModulepavproducts extends Controller {
 			'start' => 0,
 			'limit' => $setting['limit']
 		);
-
-		foreach( $setting['category_tabs'] as  $key => $categoryID ){
 			
+		foreach( $setting['category_tabs'] as  $key => $categoryID ){
 			$category = $this->model_catalog_category->getCategory( $categoryID );	
+// echo '<pre>'; print_r($category['name']); die;
 			if( $category ) {
+
+				$sub_Categories = $this->model_catalog_category->getSubCategories( $categoryID);
+				$sub_Categories_total = $this->model_catalog_category->getTotalCategoriesByCategoryId( $categoryID );
+				
+
+
 				$data['filter_category_id'] = $categoryID;
 				$products =  $this->getProducts( $this->model_catalog_product->getProducts( $data ), $setting );
 				$this->data['tabs'][] = array( 'products' 	   => $products, 
 											   'class' 		   => $setting['class'][$key],
 											   'image'		   => $setting['image'][$key],
 											   'category_name' => $category['name'],
-											   'category_id'   => $categoryID
+											   'category_id'   => $categoryID,
+											   'sub_categories'   => $sub_Categories,
 	 
 				);
 			}
 		}
-
+// echo '<pre>'; print_r($products); die;
 		$this->data['module'] = $module++;					
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/pavproducts.tpl')) {
 			$this->template = $this->config->get('config_template') . '/template/module/pavproducts.tpl';

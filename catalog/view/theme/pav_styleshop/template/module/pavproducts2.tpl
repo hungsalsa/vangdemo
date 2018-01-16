@@ -24,6 +24,8 @@ $swapimg 				= ($categoryConfig['show_swap_image'])?'swap':'';
 
 ?>
 
+
+
 <div class="box nopadding pav-categoryproducts clearfix">
 	<?php if( !empty($module_description) ) { ?>
 	<div class="module-desc">
@@ -36,11 +38,10 @@ $swapimg 				= ($categoryConfig['show_swap_image'])?'swap':'';
 			<?php foreach( $tabs as $tab => $category ) { 
 				if( empty($category) ){ continue;}
 				$tab = 'cattabs';
-				
+				///	echo '<pre>'.print_r( $category,1 ); die; 
 				$products = $category['products'];
 				$icon = $this->model_tool_image->resize( $category['image'], 279, 414 ); 
 				?>
-
 					<li class="<?php echo $category['class'];?> effect">
 						<a href="#" class="overlay">&nbsp;</a>
 						<a href="#tab-<?php echo $tab.$id.$category['category_id'];?>" data-toggle="tab" class="category_name box-heading">
@@ -49,28 +50,13 @@ $swapimg 				= ($categoryConfig['show_swap_image'])?'swap':'';
 						<a href="#tab-<?php echo $tab.$id.$category['category_id'];?>" data-toggle="tab">
 							<?php if ( $icon ) { ?><img class="img-responsive" src="<?php echo $icon;?>" alt=""/><?php } ?>							
 						</a>
-
-
-<!-- Lấy danh mục con -->
-<?php if (isset($category['sub_categories'])): ?>
-	<!-- <div class="sub_category"> -->
-		<div class="sub-menu">
-			<?php foreach ($category['sub_categories'] as $sub_cat): ?>
-				<span class="subs"><a href="?route=product/category&path=<?php echo $sub_cat['category_id']?>"><?php echo $sub_cat['name']?></a></span>
-			<?php endforeach ?>
-		</div>
-	<!-- </div>	 -->
-<?php endif ?>
-	<!-- asdad -->
-
-
 							
 					</li>
 				<?php } ?>
 			</ul>
 		</div>
 
-
+			
 			<div class="tab-content pull-left">  
 				<?php foreach( $tabs as $tab => $category ) { 
 					if( empty($category) ){ continue;}

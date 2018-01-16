@@ -18,6 +18,9 @@ CKEDITOR.editorConfig = function( config ) {
 
 	config.toolbar_Custom = [
 		['Source'],
+			['PasteText','PasteFromWord'],
+            ['Styles','Format'],
+            ['Styles','Font','FontSize'],
 		['Maximize'],
 		['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
 		['NumberedList','BulletedList','-','Outdent','Indent'],
@@ -25,7 +28,7 @@ CKEDITOR.editorConfig = function( config ) {
 		['SpecialChar'],
 		'/',
 		['Undo','Redo'],
-		['Font','FontSize'],
+		// ['Font','FontSize'],
 		['TextColor','BGColor'],
 		['Link','Unlink','Anchor'],
 		['Image','Table','HorizontalRule']

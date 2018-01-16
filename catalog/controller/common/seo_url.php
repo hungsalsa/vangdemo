@@ -89,6 +89,7 @@ class ControllerCommonSeoUrl extends Controller {
 					unset($data[$key]);
 				}
 			}
+
 		}
 	
 		if ($url) {
@@ -107,8 +108,10 @@ class ControllerCommonSeoUrl extends Controller {
 			}
 
 			return $url_info['scheme'] . '://' . $url_info['host'] . (isset($url_info['port']) ? ':' . $url_info['port'] : '') . str_replace('/index.php', '', $url_info['path']) . $url . $query;
+
 		} else {
 			return $link;
+
 		}
 	}	
 }

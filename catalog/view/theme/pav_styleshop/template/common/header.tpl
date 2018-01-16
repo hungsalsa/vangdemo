@@ -51,6 +51,7 @@ if( isset($themeConfig['customize_theme'])
 <?php if ($description) { ?>
 <meta name="description" content="<?php echo $description; ?>" />
 <?php } ?>
+<link rel="canonical" href="<?= $base ?>" />
 <?php if ($keywords) { ?>
 <meta name="keywords" content="<?php echo $keywords; ?>" />
 <?php } ?>
@@ -249,7 +250,7 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 						</div>
 
 						<div class="col-lg-9 col-md-9 col-sm-6 col-xs-12 hidden-xs hidden-sm">
-							<div class="support" style="height: 128px;padding-top: 2%;">			
+							<div class="support" style="height: 128px;padding-top: 3%;">			
 								<?php if( isset($themeConfig['support_data'][$LANGUAGE_ID]) ) { ?>
 								<?php echo html_entity_decode( $themeConfig['support_data'][$LANGUAGE_ID], ENT_QUOTES, 'UTF-8' ); ?>
 								<?php } ?>

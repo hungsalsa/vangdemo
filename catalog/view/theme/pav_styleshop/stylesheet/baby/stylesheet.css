@@ -5139,6 +5139,17 @@ ul.social li:hover span {
     .product-cols {
         width: 20%;
     }
+
+    #content .sub-menu{
+        position: absolute;
+        top: -29px;
+        left: 177px;
+        width: 939px;
+    }
+    #content .sub-menu span.subs{
+        float: right;
+        margin-left: 15px
+    }
 }
 
 @media (max-width: 1199px) {

@@ -1,6 +1,6 @@
 <?php
 // HTTP
-define('HTTP', $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']));
+define('HTTP', $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/');
 define('HTTP_SERVER', 'http://'.HTTP);
 // HTTPS
 define('HTTPS_SERVER', 'http://'.HTTP);

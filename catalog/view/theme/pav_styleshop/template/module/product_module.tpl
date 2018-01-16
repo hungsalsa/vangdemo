@@ -1,5 +1,5 @@
 <?php 
-	$cols = 4;
+	$cols = 6;
 	$span = 12/$cols;
 
 	$themeConfig  	 			= $this->config->get('themecontrol');
@@ -22,7 +22,7 @@
 <div class="box-content">		
 	<?php foreach ($products as $i => $product) { $i=$i+1; ?>
 	<?php if( $i%$cols == 1 && $cols > 1 ) { ?>
-	<div class="row product-items aaaa">
+	<div class="row product-items">
 		<?php } ?> 
 		<div class="col-lg-<?php echo $span;?> col-md-<?php echo $span;?> col-sm-<?php echo $span;?> product-cols">
 			<div class="product-block">
