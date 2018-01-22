@@ -177,6 +177,7 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 
 
 						</div>
+
 					</div>	
 
 					
@@ -233,11 +234,20 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 				
 				
 				</div>
+				<!-- Search any -->
+				<div id="search">					
+					<div class="input-group">
+						<input type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" class="input-search form-control" />
+						<span class="input-group-btn">							
+							<button class="button-search" type="button"><em class="fa fa-search"></em></button>
+						</span>
+					</div>						
+				</div>
 
 
 				</div>
 			</div>
-
+<!-- 
 			<div id="header-main">
 				<div class="container">
 					<div class="row">
@@ -273,7 +283,12 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 					</div>
 				</div>
 			</div>	
-	
+	 -->
+<div id="shopcart" class="pull-right shopping-cart hidden-xs hidden-sm">
+	<div class="cart-top">
+		<?php echo $cart; ?>
+	</div>
+</div>
 
 		
 		<div class="custom-menu">
